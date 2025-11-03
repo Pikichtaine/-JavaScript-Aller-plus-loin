@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+    <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    html,body { height: 100%; }
+  
+    body {
+      background: linear-gradient(180deg, #9ad6ea 0%, #74ebd5 50%, #ACB6E5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      color: #fff;
+    }
+  
+    .weather-card {
+      width: 360px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 40px rgba(10,20,40,0.25);
+      position: relative;
+    }
+  
+    .top-row { display:flex; justify-content:center; margin-bottom:20px; flex-direction: column; }
+    .city { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.2px; }
+    .date { font-size: 0.86rem; opacity: 0.9; }
+  
+    .main {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      margin: 14px 0 8px;
+    }
+  
+    .weather-icon {
+      width:84px; height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+  
+    .weather-icon img { width:100%; height:100%; object-fit:contain; }
+  
+    .temperature { font-size: 3.6rem; font-weight:700; line-height:1; }
+  
+    .description { font-size:1rem; margin-top:6px; text-transform: capitalize; }
+  
+    .details {
+      display:flex;
+      justify-content:space-between;
+      margin-top:18px;
+      font-size:0.92rem;
+      gap:12px;
+    }
+    .detail { flex:1; background: rgba(255,255,255,0.03); padding:10px; border-radius:10px; }
+    .detail small { display:block; font-size:0.78rem; opacity:0.9; margin-bottom:6px; }
+  
+    #city-select {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  width: 180px;
+  transition: background 0.2s ease, transform 0.14s ease;
+}
+
+#city-select:focus {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+
+/* Botón */
+#boton {
+  padding: 10px 16px;
+  margin-left: 8px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, rgba(255,255,255,0.18), rgba(255,255,255,0.12));
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.2s ease;
+}
+
+#boton:hover {
+  background: linear-gradient(90deg, rgba(255,255,255,0.25), rgba(255,255,255,0.18));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+#boton:active {
+  transform: translateY(1px);
+}
+
+
+                  /* CSS From ChatGPT */
+
+  </style>
+</head>
+<body>
+    <main class="weather-card">
+        <div class="top-row">
+
+
+
+          <div>
+            <div><input type="text" id="city-select"> <button id="boton">Appliquer</button></div>
+          </div>
+
+
+
+          <div style="display: flex; justify-content: space-around; flex-direction: row ; align-items: center;">
+            <div class="city" id="city">—</div>
+            <div class="date" id="date">—</div>
+          </div>
+
+
+
+        </div>
+    
+        <div class="main">
+          
+          
+          
+          <div class="weather-icon" id="icon">
+          </div>
+    
+          
+          
+          <div>
+            <div class="temperature" id="temperature">--°C</div>
+            <div class="description" id="Clima">...</div>
+          </div>
+
+
+
+        </div>
+    
+        <div class="details">
+          
+          
+          
+          <div class="detail">
+            <small>Humidité</small>
+            <div id="humidite">-- %</div>
+          </div>
+
+
+          <div class="detail">
+            <small>Pression</small>
+            <div id="presion">-- hPa</div>
+          </div>
+
+
+
+          <div class="detail">
+            <small>Vent</small>
+            <div id="wind">-- km/h</div>
+          </div>
+
+
+
+        </div>
+    
+    
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
